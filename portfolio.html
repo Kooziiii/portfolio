@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>ポートフォリオ</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<header id="head">
+			<div class="inner">
+				<div id="mobile-head">
+                    <div class="logo-main"><a href="home.html">KoooZiii</a></div>
+                    <div id="nav-toggle">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+				</div>
+				 <nav id="global-nav" role="navigation">
+                    <div id="global-nav-container">
+                        <ul id="global-nav-ul" class="link-animation clearfix">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="skill.html">SKILL</a></li>
+                            <li><a href="portfolio.html">PORTFOLIO</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+		</header>
+		<div class="space"></div>
+		<main>
+            <div class="portfolio-frame container">
+                <div class="row">
+                    <div id="portfolio-button" class="portfolio-content  col-md-4">
+                        <button class="portfolio-content-list">
+                            <ul>
+                                <li class="portfolio-img">
+                                    <img src="icon/iphone.png">
+                                </li>
+                                <li>
+                                    <div class="portfolio-title">
+                                        テストテスト
+                                    </div>
+                                    <div class="portfolio-text">
+                                        テストテスト
+                                    </div>
+                                </li>
+                            </ul>
+                        </button>
+                    </div>
+                    <div class="portfolio-content  col-md-4">
+                        <button class="portfolio-content-list">
+                            <ul>
+                                <li class="portfolio-img">
+                                    <img src="icon/iphone.png">
+                                </li>
+                                <li>
+                                    <div class="portfolio-title">
+                                        テストテスト
+                                    </div>
+                                    <div class="portfolio-text">
+                                        テストテスト
+                                    </div>
+                                </li>
+                            </ul>
+                        </button>
+                    </div>
+                    <div class="portfolio-content  col-md-4">
+                        <button class="portfolio-content-list">
+                            <div class="portfolio-content-title">
+                                    戦車バトル
+                                </div>
+                            <img src="image/tanks.png" class="portfolio-content-bg">
+                                
+                        </button>
+                    </div>
+                    <div class="portfolio-content  col-md-4">
+                        <button class="portfolio-content-list">
+                            <p>更新中</p>
+                        </button>
+                    </div>
+                    <div class="portfolio-content  col-md-4">
+                        <button class="portfolio-content-list">
+                            <p>更新中</p>
+                        </button>
+                    </div>
+                    <div class="portfolio-content  col-md-4">
+                        <button class="portfolio-content-list">
+                            <p>更新中</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 通常非表示の画面-->
+            <div class="modal-overlay"></div>
+            <div class="portfolio-detail">
+                <button class="close-button">
+                    <img src="icon/close-icon.png">
+                </button>
+            </div>
+		</main>
+		<footer>
+			<div class="Copyright">(c) KoooZiii. All rights reserved.</div>
+		</footer>
+	</body>
+	<script>
+        //ポートフォリオ詳細画面表示・×ボタンで非表示
+        $(document).ready(function(){
+            $('.portfolio-detail').hide();
+            $('.modal-overlay').hide();
+
+            $('.portfolio-content-list').click(function(){
+                $('.modal-overlay').show();
+                $('.portfolio-detail').show('slow');
+            });
+
+            $('.close-button').click(function(){
+                $('.modal-overlay').hide();
+                $('.portfolio-detail').hide('slow');
+            });
+        });
+
+		$(function() {
+            var $header = $('#head');
+            // Nav Fixed
+            $(window).scroll(function() {
+            if ($(window).scrollTop() > 250) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+            });
+            // Nav Toggle Button
+            $('#nav-toggle').click(function(){
+                $header.toggleClass('open');
+                });
+            });
+
+	</script>
+</html>

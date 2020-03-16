@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>ポートフォリオ</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<header id="head">
+			<div class="inner">
+				<div id="mobile-head">
+                    <div class="logo-main"><a href="home.html">KoooZiii</a></div>
+                    <div id="nav-toggle">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+				</div>
+				 <nav id="global-nav" role="navigation">
+                    <div id="global-nav-container">
+                        <ul id="global-nav-ul" class="link-animation clearfix">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="skill.html">SKILL</a></li>
+                            <li><a href="portfolio.html">PORTFOLIO</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+		</header>
+		<div class="space"></div>
+		<main>
+			<div id="contact" class="container">
+                <div class="contact-bg-frame">
+              <div class="row">
+                <div class="contact-top-content">
+                  　<p class="contact-top-title">お問い合わせ</p>
+                    <p class="contact-top-text">
+                      お仕事のご依頼、ご相談(無料)などお気軽にご連絡下さい。
+                    </p>
+                </div>
+                <div class="client-contactform">
+                    <form id="client-contactform" action="#" novalidate="novalidate" class="client-contactform">
+                        <div class="form-group">
+                            <div class="group-label">
+                                <label>
+                                    <span>氏 名</span>
+                                </label>
+                            </div>
+                            <div class="group-input">
+                                <div class="input-block">
+                                    <input type="text" placeholder="例)山田 太郎" class="form-control">
+                                </div>
+                          　</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="group-label">
+                                <label>メールアドレス</label>
+                            </div>
+                            <div class="group-input">
+                                <div class="input-block">
+                                    <input type="text" placeholder="例）taro.yamada@crowdtech.jp" class="form-control">
+                                </div>
+                            </div>
+                    　  </div>
+                    　  <div class="form-group">
+                            <div class="group-label margin-non">
+                                <label>お問い合わせ内容</label>
+                            </div>
+                            <div class="group-input textarea">
+                                <textarea placeholder="ご自由にご記入下さい。" class="form-control"></textarea>
+                      　    </div>
+                        </div>
+                        <div class="form-group form-submit">
+                            <div class="submit-btn"><input type="submit" value="送信する"></div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+	</body>
+	<script>
+		$(function() {
+            var $header = $('#head');
+            // Nav Fixed
+            $(window).scroll(function() {
+            if ($(window).scrollTop() > 250) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+            });
+            // Nav Toggle Button
+            $('#nav-toggle').click(function(){
+                $header.toggleClass('open');
+                });
+            });
+
+	</script>
+</html>
+		</main>
+	</body>
+</html>

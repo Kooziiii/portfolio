@@ -1,0 +1,654 @@
+
+.inner {
+  width: 100%;
+  position: relative;
+}
+ 
+.inner:after {
+  margin: 0 0%;
+  content:"";
+  clear: both;
+  display: block;
+}
+
+button:focus {
+  outline:0;
+}
+
+/*--------header-----------*/
+ 
+#head {
+  background-color: white;
+  top: -100px;
+  position: absolute;
+  width: 100%;
+  margin: 100px auto 0;
+  padding: 30px 0 0;
+  line-height: 1;
+  z-index: 999;
+  height:100px;
+}
+ 
+#head a,
+#head {
+    color: black;
+    text-decoration: none;
+}
+
+#head .inner {
+    position: relative;
+}
+#head .logo-main {
+    float: left;
+    position: relative;
+    font-weight: 900;
+}
+.logo-main{
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  
+  margin-left:5%;
+  color: black;
+}
+
+#head .logo-main a {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+}
+
+#global-nav ul {
+    list-style: none;
+    position: absolute;
+    margin-left: 50%;
+    top: 10px;
+    font-size: 20px;
+    margin-bottom: 0;
+    letter-spacing: 0.1em;
+}
+
+#global-nav ul li {
+    float: left;
+    padding:0 15px;
+    border-left: 1px solid #000;
+}
+
+#global-nav ul li a {
+  margin-top: 3%;
+    padding: 0px 5px 8px 5px;
+    font-weight: 900;
+    position: relative;
+    display: inline-block;
+}
+
+
+.list-animation li a{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+.link-animation li a::after{
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 2px;
+  -webkit-transform: scaleX(0);
+   -ms-transform: scaleX(0);
+   transform: scaleX(0);
+   background-color: black;
+   -webkit-transition: all .3s ease;
+   transition: all .3s ease;
+}
+
+.link-animation li a:hover::after{
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+nav span{
+    background:#666;
+    height:2px;
+    display:block;
+    position:relative;
+    width:50px;
+    left:0;
+}
+
+/*--------fixed CSS-----------*/
+ 
+#head.fixed {
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+    padding-top: 30px;
+    background: rgba(255,255,255,.7);
+    transition: top 0.65s ease-in;
+    -webkit-transition: top 0.65s ease-in;
+    -moz-transition: top 0.65s ease-in;
+}
+#head.fixed .logo-main {
+  position: relative;
+    font-size: 30px;
+    padding-top:5px;
+    color: #333;
+}
+ 
+#head.fixed .logo-main a {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+ 
+}
+#head.fixed #global-nav ul li a {
+    color: #333;
+}
+
+/*-----------スマホのトグルボタンのCSS-------------*/
+ 
+#nav-toggle {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    width: 34px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 101;
+    margin-right: 10px;
+    margin-top:8px;
+}
+#nav-toggle div {
+    position: relative;
+}
+#nav-toggle span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #000;
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+    top: 0;
+}
+#nav-toggle span:nth-child(2) {
+    top: 11px;
+}
+#nav-toggle span:nth-child(3) {
+    top: 22px;
+}
+
+/*-----------スマホ-------------*/
+@media screen and (max-width: 1200px) {
+    .head-inner {
+      display: none;
+    }
+    .slick-next {
+      right: 0;
+    }
+    #head,
+    .inner {
+        width: 100%;
+        padding: 0;
+        margin-left:0%;
+    }
+    #head {
+        top: 0;
+        position: fixed;
+        margin-top: 0;
+        height:50px;
+    }
+    /* Fixed reset */
+    #head.fixed {
+        padding-top: 0;
+        background: transparent;
+    }
+    #mobile-head {
+        background: #fff;
+        width: 100%;
+        height: 56px;
+        z-index: 999;
+        position: relative;
+    }
+    #head.fixed .logo-main,
+    #head .logo-main {
+        position: absolute;
+        padding-top: 10px;
+        left: 13px;
+        height: 50px;
+        top: 12px;
+        color: #333;
+        font-size: 26px;
+        font-weight: 900;
+    }
+    #global-nav {
+        position: absolute;
+        /* 開いてないときは画面外に配置 */
+        top: -500px;
+        background: #000;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+    }
+    #global-nav ul {
+        list-style: none;
+        margin-left: 0%;
+        margin-right: 20%;
+        position: static;
+        font-size: 14px;
+    }
+
+    #global-nav ul li a::after {
+        background-color: white;
+}
+    #global-nav ul li {
+        float: none;
+        position: static;
+        color: #fff;
+        font-weight: 900;
+    }
+    #head #global-nav ul li a,
+    #head.fixed #global-nav ul li a {
+        width: 100%;
+        display: block;
+        color: #fff;
+        padding: 18px 0;
+    }
+    #nav-toggle {
+        display: block;
+    }
+    /* #nav-toggle 切り替えアニメーション */
+    .open #nav-toggle span:nth-child(1) {
+        top: 11px;
+        -webkit-transform: rotate(315deg);
+        -moz-transform: rotate(315deg);
+        transform: rotate(315deg);
+    }
+    .open #nav-toggle span:nth-child(2) {
+        width: 0;
+        left: 50%;
+    }
+    .open #nav-toggle span:nth-child(3) {
+        top: 11px;
+        -webkit-transform: rotate(-315deg);
+        -moz-transform: rotate(-315deg);
+        transform: rotate(-315deg);
+    }
+    /* #global-nav スライドアニメーション */
+    .open #global-nav {
+        /* #global-nav top + #mobile-head height */
+        -moz-transform: translateY(556px);
+        -webkit-transform: translateY(556px);
+        transform: translateY(556px);
+    }
+}
+/*--------header設定終了-----------*/
+/*--------header設定終了-----------*/
+
+/*--------空白部分-----------*/
+/*--------空白部分-----------*/
+.space{
+  height:100px;
+  width: 100%;
+}
+/*--------空白部分終了-----------*/
+/*--------空白部分終了-----------*/
+
+footer{
+  width:100%;
+}
+
+.Copyright{
+  display: inline-block;
+  text-align: center;
+  width:100%;
+  height:30px;
+  color:#777;
+  letter-spacing: 2px;
+}
+
+/*--------ABOUTページの内容-----------*/
+/*--------ABOUTページの内容-----------*/
+
+.about-frame{
+  margin-top:100px;
+  height:520px;
+}
+
+.bg-frame{
+  padding:20px; 
+  width:100%;
+  height: 460px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+  background: #f5f5f5;
+}
+
+.about-content{
+  padding-left:50px;
+  letter-spacing: 2px;
+  height:330px;
+  margin-top: 40px;
+}
+.about-content-img img{
+  width:90%;
+  height: 85%;
+  border-radius: 50%;
+  transition: all 0.6s ease 0s;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+  margin-top:50px;
+  margin-left:30px;
+}
+.about-content-img img:hover{
+  transform: scale(1.2, 1.2);
+}
+
+.about-content-top p{
+  font-weight: 900;
+  font-size:3.0em;
+}
+
+.about-content-myintroduce p{
+  font-weight: 900;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.github-link a .Qiita-link a{
+  margin-bottom:0px;
+}
+
+
+/*--------ABOUTページの終了-----------*/
+/*--------ABOUTページの終了-----------*/
+
+/*--------skillページ-----------*/
+/*--------skillページ-----------*/
+
+.skill-frame{
+  width: 80%;
+  margin-top:100px;
+  height:520px;
+}
+
+.skill-title{
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size:300%;
+  padding-left: 40%;
+  width:100%;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.skill-all{
+  padding-top: 2%;
+  padding-left: 0;
+  padding-right:0;
+}
+
+.skill-img{
+  padding-left: 5%;
+}
+
+.skill-img img{
+  width:80%;
+  color:black;
+}
+
+.skill-content{
+  letter-spacing: 2px;
+  left:-40px;
+  padding-right:0;
+  float:left;
+}
+
+.skill-subtitle{
+  font-weight: 900;
+  font-size:1.3em;
+  float:left;
+  width:100%;
+}
+
+.skill-text{
+  padding-top: 5px;
+  font-weight: 600;
+  font:100%;
+  font-size:100%;
+}
+
+/*--------skillページの終了-----------*/
+/*--------skillページの終了-----------*/
+
+/*--------portfolioページの内容-----------*/
+/*--------portfolioページの内容-----------*/
+
+.portfolio-frame{
+  width:100%;
+  margin-top:100px;
+  margin-bottom: 40px;
+}
+
+.portfolio-content{
+  text-align: center;
+  height:230px;
+  margin-bottom: 20px;
+}
+
+.portfolio-content-list{
+  border:1px solid #e6e6e6;
+  border-radius: 10px;
+  width:95%;
+  height: 85%;
+  margin-bottom: 10px;
+  transition: all 0.6s ease 0s;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+  background: #f5f5f5;
+  padding: 0;
+}
+
+.portfolio-content-list:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.portfolio-img{
+  width:50%;
+  float:left;
+}
+.portfolio-img img{
+  width: 70%;
+  float:left;
+}
+
+.portfolio-content-list p{
+  letter-spacing: 10px;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.portfolio-content-bg{
+  border:2px solid black;
+  width:100%;
+  height: 100%;
+  border-radius: 10px;
+  left:0;
+  top:0;
+}
+
+.portfolio-content-bg:hover{
+  width:100%;
+  height: 100%;
+  border-radius: 10px;
+  left:0;
+  top:0;
+}
+
+.portfolio-content-title {
+  float: left;
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 38%;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+/*--------通常非表示画面のCSS--------*/
+
+.portfolio-detail{
+  position: fixed;
+  margin-left:10%;
+  margin-top: 5%;
+  width:80%;
+  background-color: white;
+  height: 600px;
+  display: block;
+  opacity:1; 
+  z-index: 1007; 
+  transform: scaleX(1); 
+  top: 5%;
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 999;
+    top: -25%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    will-change: opacity;
+    display: block; 
+    opacity: 0.5;
+}
+
+.close-button{
+  margin-top: 1%;
+  margin-right: 1%;
+  float:right;
+  width:5%;
+  height: 8%;
+  background-color: white;
+  border:none;
+}
+
+.close-button :hover{
+  opacity: 0.5;
+  transition: .5s;
+}
+
+.close-button :focus{
+  outline:0;
+}
+
+.close-button img{
+  width:100%;
+  height:100%;
+}
+
+/*--------通常非表示画面のCSS設定終了--------*/
+
+/*--------portfolioページの内容終了-----------*/
+/*--------portfolioページの内容終了-----------*/
+
+/*--------CONTACTページの内容-----------*/
+/*--------CONTACTページの内容-----------*/
+#contact{
+  font-weight: 900;
+}
+
+.contact-top-content{
+  margin-top: 2.5%;
+  width:100%;
+  text-align:center;
+  letter-spacing: 2px;
+}
+.client-contactform{
+  width:100%;
+  text-align: center;
+  margin-left: 12%;
+}
+.client-contactform label{
+  float: left;
+}
+
+.contact-top-title{
+  font-size: 2.5em;
+}
+
+.contact-top-text{
+  font-size: 1.2em;
+}
+
+.margin-non{
+  margin-top: -20px;
+}
+.form-group{
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+.group-input{
+  width:60%;
+}
+.form-control{
+  width:100%;
+  border:3px solid black;
+  height: 3.0em;
+}
+
+.textarea .form-control {
+  height:130px;
+  padding:12px;
+}  
+.inline-input{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inline-input .input-block{
+  width:49%;
+  margin-bottom: 0;
+}
+
+.form-group-top{
+  margin-bottom:30px;
+}
+.left-spacing{
+  margin-left:2%;
+}
+
+.not-margin{
+  margin:0px;
+}
+input[type="submit" i]{
+  text-decoration: none;
+  width:60%;
+  height: 50px;
+  margin:10px 0px;
+  background-color: black;
+  color:white;
+  font-size:1.1em;
+  letter-spacing: 1.5px;
+  float:left;
+  border-radius: 5px;
+  margin-bottom:20px;
+}
+
+input[type="submit" i]:hover{
+  opacity: 0.5;
+  transition: .5s;
+}
+/*--------CONTACTページの内容-----------*/
+/*--------CONTACTページの内容-----------*/

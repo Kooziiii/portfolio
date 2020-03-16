@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>ポートフォリオ</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<header id="head">
+			<div class="inner">
+				<div id="mobile-head">
+                    <div class="logo-main"><a href="home.html">KoooZiii</a></div>
+                    <div id="nav-toggle">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+				</div>
+				 <nav id="global-nav" role="navigation">
+                    <div id="global-nav-container">
+                        <ul id="global-nav-ul" class="link-animation clearfix">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="skill.html">SKILL</a></li>
+                            <li><a href="portfolio.html">PORTFOLIO</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+		</header>
+		<div class="space"></div>
+		<main>
+            <div class="skill-frame container">
+                <div class="bg-frame">
+                    <div class="row">
+                        <div class="skill-title">
+                            <p>SKILL LIST</p>
+                        </div>
+                        <div class="skill-all col-md-6">
+                            <div class="row">
+                                <div class="skill-img col-md-4">
+                                    <img src=icon/wordpress.png>
+                                </div>
+                                <div class="skill-content col-md-8">
+                                    <div class="skill-subtitle">
+                                        WEB SERVISE
+                                    </div>
+                                    <div class="skill-text">
+                                        WordPressを使用したWEBページ・HP制作<br>
+                                        はもちろん、HTML/CSS/JavaScript/Ruby<br>
+                                        のWebサービス開発も経験がございます。<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-all col-md-6">
+                            <div class="row">
+                                <div class="skill-img col-md-4">
+                                    <img src=icon/ios-icon.png>
+                                </div>
+                                <div class="skill-content col-md-8">
+                                    <div class="skill-subtitle">
+                                        IOS APPLICATION
+                                    </div>
+                                    <div class="skill-text">
+                                        <br>
+                                        Swiftを使用したIOSアプリ製作が可能です。<br>
+                                        製作したアプリのアップルストアへのリリー<br>
+                                        ス・公開までの対応が可能です。<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-all col-md-6">
+                            <div class="row">
+                                <div class="skill-img col-md-4">
+                                    <img src=icon/python-icon.png>
+                                </div>
+                                <div class="skill-content col-md-8">
+                                    <div class="skill-subtitle">
+                                        DATA ANALYSIS
+                                    </div>
+                                    <div class="skill-text">
+                                        Pythonを使用したデータ分析が可能です。<br>
+                                        SIGNATEにてデータ分析コンペティションに<br>
+                                        取り組み、スキルに磨きをかけております。<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-all col-md-6">
+                            <div class="row">
+                                <div class="skill-img col-md-4">
+                                    <img src=icon/unity-icon.png>
+                                </div>
+                                <div class="skill-content col-md-8">
+                                    <div class="skill-subtitle">
+                                        CASUAL GAME
+                                    </div>
+                                    <div class="skill-text">
+                                        エンジニアとチームを組んでUnityを使用<br>
+                                        したカジュアルゲームを開発しております。<br>
+                                        企画〜一部機能の実装を担当しております。<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+		</main>
+		<footer>
+			<div class="Copyright">(c) KoooZiii. All rights reserved.</div>
+		</footer>
+	</body>
+	<script>
+		$(function() {
+            var $header = $('#head');
+            // Nav Fixed
+            $(window).scroll(function() {
+            if ($(window).scrollTop() > 250) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+            });
+            // Nav Toggle Button
+            $('#nav-toggle').click(function(){
+                $header.toggleClass('open');
+                });
+            });
+	</script>
+</html>
